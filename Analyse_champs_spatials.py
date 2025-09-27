@@ -37,6 +37,7 @@ ax.set_yticks(range(-90, 90, 30), crs=ccrs.LambertCylindrical())
 ax.set_ylabel("Latitude")
 ax.set_xlabel("Longitude")
 plt.colorbar(ax=ax, orientation="horizontal", label="Taux de précipitation (mm/3h)")
+plt.savefig("fig5.png")
 
 #2
 plt.figure()
@@ -46,6 +47,7 @@ plt.yscale('log')
 plt.title("Histograme pour différentes intensités de précipitation")
 plt.xlabel("Intensité de précipitation (mm/3h)")
 plt.ylabel("Nombre de mesures")
+plt.savefig("fig6.png")
 
 #3
 precip_moyenne = precipitation.mean(dim="time")
@@ -61,6 +63,7 @@ ax.set_yticks(range(-90, 90, 30), crs=ccrs.LambertCylindrical())
 ax.set_ylabel("Latitude")
 ax.set_xlabel("Longitude")
 plt.colorbar(ax=ax, orientation="horizontal", label="Taux de précipitation (mm/3h)")
+plt.savefig("fig7.png")
 
 
 #4
@@ -71,6 +74,7 @@ plt.yscale('log')
 plt.title("Histograme du taux de précipitation moyen")
 plt.xlabel("Taux de précipitation moyen (mm/3h)")
 plt.ylabel("Nombre de mesures")
+plt.savefig("fig8.png")
 
 #5
 precip_sel = precipitation.sel(lat=slice(44.5, 46.5), lon=slice(-74.5, -72.5))
@@ -85,6 +89,7 @@ ax.set_yticks(np.arange(44.5, 46.5), crs=ccrs.Mercator())
 ax.set_ylabel("Latitude")
 ax.set_xlabel("Longitude")
 plt.colorbar(ax=ax, orientation="horizontal", label="Taux de précipitation (mm/3h)")
+plt.savefig("fig9a.png")
 
 #6
 precip_sel = precipitation.sel(lat=slice(44.5, 46.5), lon=slice(-74.5, -72.5))
@@ -99,6 +104,7 @@ ax.set_yticks(np.arange(44.5, 46.5, 0.5), crs=ccrs.Mercator())
 ax.set_ylabel("Latitude")
 ax.set_xlabel("Longitude")
 plt.colorbar(ax=ax, orientation="horizontal", label="Taux de précipitation (mm/3h)")
+plt.savefig("fig9b.png")
 
 #Bonus
 #precip_somme = precipitation.sum(dim="time")
@@ -128,4 +134,5 @@ ax.set_yticks(range(-90, 90), crs=ccrs.LambertCylindrical())
 ax.set_ylabel("Latitude")
 ax.set_xlabel("Longitude")
 plt.colorbar(ax=ax, orientation="horizontal", label="Intensité des précipitations (mm/3h)")
+plt.savefig("fig10.png")
 plt.show()

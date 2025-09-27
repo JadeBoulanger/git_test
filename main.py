@@ -26,7 +26,7 @@ lats = ds_i['lat']
 #Questions 1, 2 et 3
 
 #Kuala Lumpur
-fig, Taux_Precip = plt.subplots(2,2)
+fig1, Taux_Precip = plt.subplots(2,2)
 precip_sel = precipitation.sel(lat=3.1, lon=101.6, method='nearest')
 Taux_Precip[0,0].plot(precip_sel)
 Taux_Precip[0,0].set_title("Précipitations à Kuala Lumpur")
@@ -81,7 +81,7 @@ coef = np.corrcoef(arr, rowvar=True)
 print("Coefficient à Kuala Lumpur : " , coef)
 
 #plt.figure()
-fig, Variab_Points_Proches = plt.subplots(2,2)
+fig2, Variab_Points_Proches = plt.subplots(2,2)
 ax = Variab_Points_Proches[0, 0]
 ax.scatter(precip_sel_nord.values, precip_sel.values, color='blue', label='50km au Nord')
 ax.scatter(precip_sel_sud.values, precip_sel.values, color='red', label='50km au Sud')
@@ -98,7 +98,7 @@ for date, donnee in groupes_jours:
 precip_moyenne_journee = (total/30).values
 heure_de_la_journee = ["8h", "11h", "14h", "17h", "20h", "23h", "2h", "5h"] #UTC+8 pour Kuala Lumpur
 
-fig, Cycle_Precip = plt.subplots(2,2)
+fig3, Cycle_Precip = plt.subplots(2,2)
 Cycle_Precip[0, 0].plot(heure_de_la_journee, precip_moyenne_journee)
 Cycle_Precip[0, 0].set_title("Kuala Lumpur")
 Cycle_Precip[0, 0].set_ylim(0, 0.03)
@@ -323,5 +323,9 @@ for ax in Taux_Precip.flat:
     ax.set(xlabel="Temps",ylabel="Précipitation")
 for ax in Taux_Precip.flat:
     ax.label_outer()
+fig1.savefig("fig2.png")
+fig2.savefig("fig3.png")
+fig3.savefig("fig4.png")
+
 plt.show() #Montre tous les graphiques
 
