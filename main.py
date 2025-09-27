@@ -103,7 +103,6 @@ Cycle_Precip[0, 0].plot(heure_de_la_journee, precip_moyenne_journee)
 Cycle_Precip[0, 0].set_title("Kuala Lumpur")
 Cycle_Precip[0, 0].set_ylim(0, 0.03)
 Cycle_Precip[0, 0].set_ylabel("Précip. moy. (mm)")
-Cycle_Precip[0, 0].set_xlabel("Heure de la journée")
 Cycle_Precip[0, 0].grid(True)
 
 #Quibdo
@@ -174,7 +173,6 @@ Cycle_Precip[0, 1].plot(heure_de_la_journee, precip_moyenne_journee)
 Cycle_Precip[0, 1].set_title("Quibdó")
 Cycle_Precip[0, 1].set_ylim(0, 0.03)
 Cycle_Precip[0, 1].set_ylabel("Précip. moy. (mm)")
-Cycle_Precip[0, 1].set_xlabel("Heure de la journée")
 Cycle_Precip[0, 1].grid(True)
 
 #Montréal
